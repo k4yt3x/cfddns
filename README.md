@@ -1,6 +1,8 @@
-# CFDDNS
+# cfddns
 
-CFDDNS is a systemd-daemonized Cloudflare DDNS service. It updates the A/AAAA records of domains with your current IP address.
+cfddns is a systemd-daemonized Cloudflare DDNS service. It updates the A/AAAA records of domains with your current IP address.
+
+![screenshot](https://user-images.githubusercontent.com/21986859/113619440-7fbf7e80-9648-11eb-80d5-ac1b028081c3.png)
 
 ## Installation
 
@@ -33,7 +35,7 @@ sudo cp /etc/cfddns/template.yaml /etc/cfddns/test.example.com.yaml
 sudo cp /etc/cfddns/template.yaml /etc/cfddns/test2.example.com.yaml
 ```
 
-Alternatively, since the two domains are both subdomains under the same top-level domain (TLD) `example.com`, you can create one config file for the TLD. CFDDNS will try to match the exact config file first. If it cannot find a config with the exact domain name, it will try to find the TLD's config file.
+Alternatively, since the two domains are both subdomains under the same top-level domain (TLD) `example.com`, you can create one config file for the TLD. cfddns will try to match the exact config file first. If it cannot find a config with the exact domain name, it will try to find the TLD's config file.
 
 ```shell
 sudo cp /etc/cfddns/template.yaml /etc/cfddns/example.com.yaml
