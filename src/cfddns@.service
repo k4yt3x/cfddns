@@ -1,0 +1,22 @@
+# Name: CloudFlare DDNS
+# Author: K4YT3X
+# Date Created: July 25, 2020
+# Last Edited: April 5, 2021
+
+[Unit]
+Description=CloudFlare DDNS Automatic Update for %I
+After=network-online.target syslog.target
+Wants=network-online.target syslog.target
+
+[Service]
+Type=simple
+# CFDDNS's process will downgrade the root user to nobody(65534)
+#   after it finishes reading the config file
+User=root
+Group=nogroup
+ExecStart=/usr/bin/python3 /usr/local/bin/cfddns -d %i
+RestartSec=2s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

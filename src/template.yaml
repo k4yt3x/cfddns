@@ -1,0 +1,5 @@
+# Cloudflare API token
+token: REPLACE_THIS_WITH_YOUR_CF_TOKEN
+
+# update frequency
+frequency: 300
